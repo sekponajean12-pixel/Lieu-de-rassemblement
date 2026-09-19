@@ -1,0 +1,753 @@
+/* =========================================================
+   Lieu de rassemblement — Jeunes Adultes Seuls (Afrique de l'Ouest)
+   Feuille de style commune — index.html / a-propos.html / contact.html
+
+   Palette de couleurs utilisée dans tout le site
+   (pas de variables CSS pour l'instant, donc on recopie
+   ces codes directement dans chaque règle) :
+   - Bleu nuit (navy)   : #1B2A5E
+   - Bleu nuit foncé    : #111B3E
+   - Doré (gold)        : #C9961A
+   - Doré clair         : #EDD580
+   - Vert               : #2A6048
+   - Fond crème         : #FAF9F5
+   - Fond crème foncé   : #F0EAE0
+   - Texte gris foncé   : #6B6880
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #FAF9F5;
+  color: #181828;
+}
+
+/* ───────────────── BARRE DE NAVIGATION ─────────────────
+   Flexbox : le logo à gauche, les liens à droite,
+   tout centré verticalement */
+nav {
+  background-color: #1B2A5E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #C9961A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #1B2A5E;
+}
+
+.nav-logo-main {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.nav-logo-sub {
+  font-size: 10px;
+  color: #EDD580;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: #C9961A;
+}
+
+.nav-links a.active {
+  color: #EDD580;
+}
+
+.nav-links .nav-cta {
+  background-color: #C9961A;
+  color: #1B2A5E;
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+/* ───────────────── BANDEAU DE BIENVENUE ─────────────────
+   Pas d'animation : les mots s'affichent simplement les uns
+   à côté des autres et passent à la ligne si besoin
+   (flex-wrap: wrap) */
+.bandeau-bienvenue {
+  background-color: #111B3E;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.bandeau-mot {
+  color: #EDD580;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ───────────────── HERO (page d'accueil) ─────────────────
+   Fond de couleur unie, tout centré avec text-align */
+.hero {
+  background-color: #1B2A5E;
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(201, 150, 26, 0.2);
+  border: 1px solid #C9961A;
+  color: #EDD580;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-age {
+  display: inline-block;
+  background-color: #2A6048;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.hero h1 em {
+  color: #C9961A;
+  font-style: normal;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: #D8DBEA;
+  max-width: 540px;
+  margin: 0 auto 32px auto;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ───────────────── PETIT EN-TÊTE (pages secondaires) ───────────────── */
+.page-header {
+  background-color: #1B2A5E;
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.page-header p {
+  font-size: 15px;
+  color: #D8DBEA;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ───────────────── BOUTONS ───────────────── */
+.btn-primary {
+  background-color: #C9961A;
+  color: #1B2A5E;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #EDD580;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background-color: #FFFFFF;
+  color: #1B2A5E;
+}
+
+.btn-green {
+  background-color: #2A6048;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+}
+
+.btn-green:hover {
+  background-color: #3D7D5F;
+}
+
+/* ───────────────── LISERÉ DE COULEUR ─────────────────
+   Un simple dégradé répété, façon tissu kente */
+.kente {
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    #C9961A 0px, #C9961A 14px,
+    #2A6048 14px, #2A6048 28px,
+    #1B2A5E 28px, #1B2A5E 42px,
+    #8B5E3C 42px, #8B5E3C 56px
+  );
+}
+
+/* ───────────────── TITRES DE SECTION ───────────────── */
+.section-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #C9961A;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #1B2A5E;
+  margin-bottom: 14px;
+}
+
+.section-desc {
+  font-size: 15px;
+  color: #6B6880;
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+/* ───────────────── SECTION "CARTES" (page d'accueil) ─────────────────
+   CSS Grid à 3 colonnes égales */
+.cards-section {
+  padding: 60px 40px;
+}
+
+.cards-hd {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cards-hd .section-desc {
+  margin: 0 auto;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #C9961A;
+}
+
+.card.card-green {
+  border-top-color: #2A6048;
+}
+
+.card.card-navy {
+  border-top-color: #1B2A5E;
+}
+
+.card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background-color: #F0EAE0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  color: #1B2A5E;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #6B6880;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.card-link {
+  color: #2A6048;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* ───────────────── SECTION MISSION / CHIFFRES ─────────────────
+   Grid à 2 colonnes : texte à gauche, chiffres à droite */
+.feature-section {
+  background-color: #1B2A5E;
+  padding: 60px 40px;
+}
+
+.feature-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.feature-content .section-title {
+  color: #FFFFFF;
+}
+
+.feature-content .section-desc {
+  color: #C7CBE0;
+  max-width: 100%;
+}
+
+.feature-list {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #D8DBEA;
+  margin-bottom: 14px;
+}
+
+.fcheck {
+  width: 20px;
+  height: 20px;
+  background-color: #2A6048;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.feature-vis {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.stat-box {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #C9961A;
+}
+
+.stat-lbl {
+  font-size: 11px;
+  color: #C7CBE0;
+  margin-top: 6px;
+}
+
+/* ───────────────── RESSOURCES (page à propos) ─────────────────
+   Grid à 2 colonnes */
+.resources-section {
+  background-color: #F0EAE0;
+  padding: 60px 40px;
+}
+
+.resources-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.res-item {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  border-left: 4px solid #C9961A;
+}
+
+.res-item:hover {
+  background-color: #FAF6EC;
+}
+
+.res-emoji {
+  font-size: 28px;
+}
+
+.res-item h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1B2A5E;
+  margin-bottom: 4px;
+}
+
+.res-item p {
+  font-size: 12px;
+  color: #6B6880;
+}
+
+/* ───────────────── GALERIE (page à propos) ─────────────────
+   Grid à 3 colonnes, toutes les cases de la même taille.
+   Chaque carte a sa propre classe de couleur (c1 à c5) —
+   plus simple à lire que des sélecteurs nth-child. */
+.gallery-section {
+  padding: 60px 40px;
+}
+
+.gallery-hd {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.gallery-hd .section-desc {
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.g-card {
+  height: 180px;
+  border-radius: 14px;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+
+.g-card.c1 { background-color: #2A6048; }
+.g-card.c2 { background-color: #8B5E3C; }
+.g-card.c3 { background-color: #1B2A5E; }
+.g-card.c4 { background-color: #C9961A; }
+.g-card.c5 { background-color: #3A5090; }
+
+.g-caption {
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.gallery-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ───────────────── PAGE CONTACT ─────────────────
+   Grid à 2 colonnes : infos à gauche, formulaire à droite */
+.contact-section {
+  padding: 60px 40px;
+}
+
+.contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 50px;
+}
+
+.contact-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #F0EAE0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.info-item h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1B2A5E;
+  margin-bottom: 4px;
+}
+
+.info-item p,
+.info-item a {
+  font-size: 13px;
+  color: #6B6880;
+  text-decoration: none;
+}
+
+.info-item a:hover {
+  color: #2A6048;
+}
+
+.contact-form {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #1B2A5E;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #181828;
+  border: 1.5px solid #E4E0D6;
+  border-radius: 8px;
+  background-color: #FAF9F5;
+}
+
+.field textarea {
+  min-height: 100px;
+}
+
+/* ───────────────── PIED DE PAGE ─────────────────
+   Grid à 3 colonnes */
+footer {
+  background-color: #111B3E;
+  padding: 50px 40px 26px 40px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 24px;
+}
+
+.fbrand h4 {
+  color: #FFFFFF;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.fbrand p {
+  font-size: 13px;
+  color: #9A9CB5;
+  line-height: 1.6;
+}
+
+.fcol h5 {
+  color: #FFFFFF;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.fcol ul {
+  list-style: none;
+}
+
+.fcol li {
+  margin-bottom: 10px;
+}
+
+.fcol a {
+  color: #9A9CB5;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.fcol a:hover {
+  color: #C9961A;
+}
+
+.footer-bot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #6B6D85;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bot .accent {
+  color: #C9961A;
+  font-weight: bold;
+}
+
+/* ───────────────── RESPONSIVE ─────────────────
+   Sous 800px : tout repasse en une colonne */
+@media (max-width: 800px) {
+  nav {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero, .page-header, .cards-section, .feature-section,
+  .resources-section, .gallery-section, .contact-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .cards-grid,
+  .resources-grid,
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .feature-inner,
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
