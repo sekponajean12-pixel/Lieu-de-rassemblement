@@ -1,3 +1,20 @@
+/* =========================================================
+   Lieu de rassemblement — Jeunes Adultes Seuls (Afrique de l'Ouest)
+   Feuille de style commune — index.html / a-propos.html / contact.html
+
+   Palette de couleurs utilisée dans tout le site
+   (pas de variables CSS pour l'instant, donc on recopie
+   ces codes directement dans chaque règle) :
+   - Bleu nuit (navy)   : #1B2A5E
+   - Bleu nuit foncé    : #111B3E
+   - Doré (gold)        : #C9961A
+   - Doré clair         : #EDD580
+   - Vert               : #2A6048
+   - Fond crème         : #FAF9F5
+   - Fond crème foncé   : #F0EAE0
+   - Texte gris foncé   : #6B6880
+   ========================================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +27,9 @@ body {
   color: #181828;
 }
 
-/* ──────────────── BARRE DE NAVIGATION ────────────────*/
+/* ───────────────── BARRE DE NAVIGATION ─────────────────
+   Flexbox : le logo à gauche, les liens à droite,
+   tout centré verticalement */
 nav {
   background-color: #1B2A5E;
   display: flex;
@@ -78,7 +97,10 @@ nav {
   border-radius: 20px;
 }
 
-/* ───────────────── BANDEAU DE BIENVENUE ─────────────────*/
+/* ───────────────── BANDEAU DE BIENVENUE ─────────────────
+   Pas d'animation : les mots s'affichent simplement les uns
+   à côté des autres et passent à la ligne si besoin
+   (flex-wrap: wrap) */
 .bandeau-bienvenue {
   background-color: #111B3E;
   padding: 12px 20px;
@@ -96,7 +118,8 @@ nav {
   letter-spacing: 1px;
 }
 
-/* ───────────────── HERO (page d'accueil) ─────────────────*/
+/* ───────────────── HERO (page d'accueil) ─────────────────
+   Fond de couleur unie, tout centré avec text-align */
 .hero {
   background-color: #1B2A5E;
   padding: 70px 40px;
@@ -226,7 +249,8 @@ nav {
   background-color: #3D7D5F;
 }
 
-/* ───────────────── LISERÉ DE COULEUR ───────────────── */
+/* ───────────────── LISERÉ DE COULEUR ─────────────────
+   Un simple dégradé répété, façon tissu kente */
 .kente {
   height: 10px;
   background: repeating-linear-gradient(
@@ -263,7 +287,8 @@ nav {
   line-height: 1.6;
 }
 
-/* ───────────────── SECTION "CARTES" (page d'accueil) ───────────────── */
+/* ───────────────── SECTION "CARTES" (page d'accueil) ─────────────────
+   CSS Grid à 3 colonnes égales */
 .cards-section {
   padding: 60px 40px;
 }
@@ -338,187 +363,84 @@ nav {
   text-decoration: underline;
 }
 
-/* ───────────────── SECTION MISSION / CHIFFRES ───────────────── */
-.feature-section {
-  background-color: #1B2A5E;
+/* ───────────────── PAGE FORMATIONS ─────────────────
+   Grid à 3 colonnes : une carte par formation, avec une
+   photo en haut (img), un titre, un texte et deux infos
+   pratiques (durée / niveau) en bas */
+.formations-section {
   padding: 60px 40px;
 }
 
-.feature-inner {
+.formations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
   max-width: 1100px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
 }
 
-.feature-content .section-title {
-  color: #FFFFFF;
+.formation-card {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-.feature-content .section-desc {
-  color: #C7CBE0;
-  max-width: 100%;
+.formation-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
 }
 
-.feature-list {
-  list-style: none;
-  margin-top: 24px;
-}
-
-.feature-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 15px;
-  color: #D8DBEA;
-  margin-bottom: 14px;
-}
-
-.fcheck {
-  width: 20px;
-  height: 20px;
-  background-color: #2A6048;
-  border-radius: 50%;
+/* Pour la formation sans photo : un bloc de couleur uni
+   de la même hauteur que les images, pour que toutes les
+   cartes restent alignées dans la grille */
+.formation-img-vide {
+  width: 100%;
+  height: 170px;
+  background-color: #1B2A5E;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  color: #FFFFFF;
-  flex-shrink: 0;
+  font-size: 46px;
 }
 
-.feature-vis {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  padding: 30px;
+.formation-body {
+  padding: 22px;
 }
 
-.stat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.stat-box {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 24px 16px;
-  text-align: center;
-}
-
-.stat-num {
+.formation-body h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  font-weight: bold;
-  color: #C9961A;
-}
-
-.stat-lbl {
-  font-size: 11px;
-  color: #C7CBE0;
-  margin-top: 6px;
-}
-
-/* ───────────────── RESSOURCES (page à propos) ───────────────── */
-.resources-section {
-  background-color: #F0EAE0;
-  padding: 60px 40px;
-}
-
-.resources-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.resources-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 36px;
-}
-
-.res-item {
-  background-color: #FFFFFF;
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  color: inherit;
-  border-left: 4px solid #C9961A;
-}
-
-.res-item:hover {
-  background-color: #FAF6EC;
-}
-
-.res-emoji {
-  font-size: 28px;
-}
-
-.res-item h4 {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 18px;
   color: #1B2A5E;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.res-item p {
-  font-size: 12px;
+.formation-body p {
+  font-size: 13.5px;
   color: #6B6880;
+  line-height: 1.6;
+  margin-bottom: 16px;
 }
 
-/* ───────────────── GALERIE (page à propos) ───────────────── */
-.gallery-section {
-  padding: 60px 40px;
-}
-
-.gallery-hd {
-  text-align: center;
-  margin-bottom: 36px;
-}
-
-.gallery-hd .section-desc {
-  margin: 0 auto;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.g-card {
-  height: 180px;
-  border-radius: 14px;
+.formation-meta {
   display: flex;
-  align-items: flex-end;
-  padding: 18px;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
-.g-card.c1 { background-color: #2A6048; }
-.g-card.c2 { background-color: #8B5E3C; }
-.g-card.c3 { background-color: #1B2A5E; }
-.g-card.c4 { background-color: #C9961A; }
-.g-card.c5 { background-color: #3A5090; }
-
-.g-caption {
-  color: #FFFFFF;
-  font-size: 13px;
+.formation-tag {
+  background-color: #F0EAE0;
+  color: #1B2A5E;
+  font-size: 11px;
   font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 20px;
 }
-
-.gallery-cta {
-  text-align: center;
-  margin-top: 30px;
-}
-
-/* ───────────────── PAGE CONTACT ───────────────── */
+/* ───────────────── PAGE CONTACT ─────────────────
+   Grid à 2 colonnes : infos à gauche, formulaire à droite */
 .contact-section {
   padding: 60px 40px;
 }
@@ -615,7 +537,8 @@ nav {
   min-height: 100px;
 }
 
-/* ───────────────── PIED DE PAGE ───────────────── */
+/* ───────────────── PIED DE PAGE ─────────────────
+   Grid à 3 colonnes */
 footer {
   background-color: #111B3E;
   padding: 50px 40px 26px 40px;
@@ -663,7 +586,7 @@ footer {
 .fcol li {
   margin-bottom: 10px;
 }
- 
+
 .fcol a {
   color: #9A9CB5;
   text-decoration: none;
@@ -689,7 +612,8 @@ footer {
   font-weight: bold;
 }
 
-/* ───────────────── RESPONSIVE ───────────────── */
+/* ───────────────── RESPONSIVE ─────────────────
+   Sous 800px : tout repasse en une colonne */
 @media (max-width: 800px) {
   nav {
     padding: 12px 20px;
