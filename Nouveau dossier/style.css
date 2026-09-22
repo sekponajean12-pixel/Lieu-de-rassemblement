@@ -1,20 +1,3 @@
-/* =========================================================
-   Lieu de rassemblement — Jeunes Adultes Seuls (Afrique de l'Ouest)
-   Feuille de style commune — index.html / a-propos.html / contact.html
-
-   Palette de couleurs utilisée dans tout le site
-   (pas de variables CSS pour l'instant, donc on recopie
-   ces codes directement dans chaque règle) :
-   - Bleu nuit (navy)   : #1B2A5E
-   - Bleu nuit foncé    : #111B3E
-   - Doré (gold)        : #C9961A
-   - Doré clair         : #EDD580
-   - Vert               : #2A6048
-   - Fond crème         : #FAF9F5
-   - Fond crème foncé   : #F0EAE0
-   - Texte gris foncé   : #6B6880
-   ========================================================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -26,16 +9,21 @@ body {
   background-color: #FAF9F5;
   color: #181828;
 }
-
+.hero-background {
+  background-image: url('image_logo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 /* ───────────────── BARRE DE NAVIGATION ─────────────────
    Flexbox : le logo à gauche, les liens à droite,
-   tout centré verticalement */
+   tout centré verticalement */ 
 nav {
-  background-color: #1B2A5E;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 15px 5px;
 }
 
 .nav-logo {
@@ -46,15 +34,18 @@ nav {
 }
 
 .nav-logo-icon {
-  width: 36px;
-  height: 36px;
-  background-color: #C9961A;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   color: #1B2A5E;
+}
+.nav-logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .nav-logo-main {
@@ -73,25 +64,34 @@ nav {
   align-items: center;
   gap: 26px;
   list-style: none;
+  justyfy-content: center;
 }
 
 .nav-links a {
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .nav-links a:hover {
-  color: #C9961A;
+  color: #ffffff;
+  bacgkground-color: #C9961A;
 }
 
 .nav-links a.active {
-  color: #EDD580;
+  color: gold;
+}
+.nav-links a.active:hover {
+  color: #ffffff;
+}
+.nav-links .fix {
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .nav-links .nav-cta {
-  background-color: #C9961A;
+  background-color: #63583c;
   color: #1B2A5E;
   padding: 8px 18px;
   border-radius: 20px;
@@ -121,7 +121,7 @@ nav {
 /* ───────────────── HERO (page d'accueil) ─────────────────
    Fond de couleur unie, tout centré avec text-align */
 .hero {
-  background-color: #1B2A5E;
+  background-color: transparent;
   padding: 70px 40px;
   text-align: center;
 }
