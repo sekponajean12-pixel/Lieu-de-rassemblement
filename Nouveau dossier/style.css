@@ -10,7 +10,7 @@ body {
   color: #181828;
 }
 .hero-background {
-  background-image: url('image_logo.jpg');
+  background-image: linear-gradient(rgba(17, 27, 62, 0.75), rgba(17, 27, 62, 0.85)), url('images.jfif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -64,7 +64,6 @@ nav {
   align-items: center;
   gap: 26px;
   list-style: none;
-  justyfy-content: center;
 }
 
 .nav-links a {
@@ -76,7 +75,6 @@ nav {
 
 .nav-links a:hover {
   color: #ffffff;
-  bacgkground-color: #C9961A;
 }
 
 .nav-links a.active {
@@ -102,7 +100,7 @@ nav {
    à côté des autres et passent à la ligne si besoin
    (flex-wrap: wrap) */
 .bandeau-bienvenue {
-  background-color: #111B3E;
+  background-color: transparent;
   padding: 12px 20px;
   display: flex;
   flex-wrap: wrap;
@@ -247,19 +245,6 @@ nav {
 
 .btn-green:hover {
   background-color: #3D7D5F;
-}
-
-/* ───────────────── LISERÉ DE COULEUR ─────────────────
-   Un simple dégradé répété, façon tissu kente */
-.kente {
-  height: 10px;
-  background: repeating-linear-gradient(
-    90deg,
-    #C9961A 0px, #C9961A 14px,
-    #2A6048 14px, #2A6048 28px,
-    #1B2A5E 28px, #1B2A5E 42px,
-    #8B5E3C 42px, #8B5E3C 56px
-  );
 }
 
 /* ───────────────── TITRES DE SECTION ───────────────── */
